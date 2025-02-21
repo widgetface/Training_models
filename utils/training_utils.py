@@ -10,7 +10,7 @@ def train_spacy_ner(
     epochs: int = 30,
     labels: List[str] = [],
     model: str = None,
-):
+) -> None:
     random.shuffle(training_data)
 
     nlp = spacy.blank("en") if model is None else spacy.load(model)

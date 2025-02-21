@@ -4,11 +4,11 @@ import pandas as pd
 
 
 class FileProcessor:
-    def __init__(self, file_path, output_path):
+    def __init__(self, file_path: str, output_path: str) -> None:
         self._file_path = file_path
         self.output_path = output_path
 
-    def remote_csv_to_json(self, url: str, columns: List[str], name: str):
+    def remote_csv_to_json(self, url: str, columns: List[str], name: str) -> None:
         name = name.replace(",", "").strip()
         df = pd.read_csv(url, usecols=columns)
         result = df.to_json(orient="values")
