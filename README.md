@@ -10,3 +10,9 @@ Notice: Huge thank you to imantsm for his excellent medical abbreviations reposi
 1. [imantsm's GitHub repo](https://github.com/imantsm/medical_abbreviations)
 
 2. [Gateshead NHS](https://www.gatesheadhealth.nhs.uk/wp-content/uploads/2022/03/Approved-abbreviations-list-v5-2018-06-17.pdf)
+
+Note
+
+utils/abbreviation_utils.py
+
+This is from the [SciSpacy project](https://github.com/allenai/scispacy) 
