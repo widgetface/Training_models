@@ -6,9 +6,10 @@ from spacy.util import minibatch
 
 
 ABBREV_FILE_PATH = "./data/updated_abbreviations.json"
-TRAINING_MODEL_PATH = "./model/trained"
+TRAINING_MODEL_PATH = "./trained/"
 ABBREV_ENTITY_LABEL = "CLIN_ABBREV"
 NER = "ner"
+MODEL = "en"
 
 
 def create_training_data(key, value):
@@ -48,7 +49,7 @@ def prepare_spacy_training_data():
 
 
 # Load a blank spaCy model or a pre-trained model
-nlp = spacy.blank("en")
+nlp = spacy.blank(MODEL)
 
 # Define some training data
 tdata = prepare_spacy_training_data()
@@ -72,4 +73,4 @@ for epoch in range(30):
         nlp.update([example], drop=0.5, losses=losses)
     print(f"Losses at epoch {epoch}: {losses}")
 
-nlp.to_disk(TRAINING_MODEL_PATH)
+nlp.to_disk(f"TRAINING_MODEL_PATH/{MODEL}")
